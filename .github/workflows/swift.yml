@@ -21,6 +21,9 @@ jobs:
       uses: maxim-lobanov/setup-xcode@v1
       with:
           xcode-version: '15.2'
+    - name: Arkana Setup
+      run: |
+        gem install arkana
           
     - name: Build
       run: |
