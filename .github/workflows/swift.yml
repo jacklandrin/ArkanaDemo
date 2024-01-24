@@ -29,6 +29,13 @@ jobs:
     - name: Generate Arkana Packages
       run: |
         arkana -c .arkana.yml -e .env.keys -i debug -l swift
+
+    - name: Check Swift package dependencies
+      id: spm-dep-check
+      uses: MarcoEidinger/swift-package-dependencies-check@2.3.2
+      with:
+         isMutating: true
+         failWhenOutdated: false
           
     - name: Build
       run: |
