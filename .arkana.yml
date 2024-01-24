@@ -1,0 +1,11 @@
+import_name: 'ArkanaKeys'
+swift_declaration_strategy: let
+package_manager: spm
+environments: 
+  - Debug
+  - Release
+global_secrets:
+  - MySecretAPIKey
+  - MyPassword
+environment_secrets:
+  - SeviceAPIKey
