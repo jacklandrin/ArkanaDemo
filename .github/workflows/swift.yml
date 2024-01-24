@@ -24,5 +24,4 @@ jobs:
           
     - name: Build
       run: |
-        cd ArkanaDemo
         xcodebuild build -project ArkanaDemo.xcodeproj -scheme ArkanaDemo clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
