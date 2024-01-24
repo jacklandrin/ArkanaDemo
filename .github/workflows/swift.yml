@@ -25,6 +25,10 @@ jobs:
     - name: Arkana Setup
       run: |
         gem install arkana
+
+    - name: Generate Arkana Packages
+      run: |
+        arkana -c .arkana.yml -e .env.keys -i debug -l swift
           
     - name: Build
       run: |
