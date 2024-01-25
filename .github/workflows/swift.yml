@@ -32,4 +32,5 @@ jobs:
         cd ArkanaKeys/ArkanaKeys
           
     - name: Build
-      run: swift build
+      run: |
+        xcodebuild build -project ArkanaDemo.xcodeproj -scheme ArkanaDemo clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
