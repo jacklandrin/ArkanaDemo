@@ -29,6 +29,7 @@ jobs:
     - name: Generate Arkana Packages
       run: |
         arkana -c .arkana.yml -e .env.keys -i debug -l swift
+        cd ArkanaKeys/ArkanaKeys
           
     - name: Build
       run: swift build
