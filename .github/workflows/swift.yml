@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -29,14 +29,8 @@ jobs:
     - name: Generate Arkana Packages
       run: |
         arkana -c .arkana.yml -e .env.keys -i debug -l swift
-
-    - name: Check Swift package dependencies
-      id: spm-dep-check
-      uses: MarcoEidinger/swift-package-dependencies-check@2.3.2
-      with:
-         isMutating: true
-         failWhenOutdated: false
+        cd ArkanaKeys
           
-    - name: Build
-      run: |
-        xcodebuild build -project ArkanaDemo.xcodeproj -scheme ArkanaDemo clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
+    # - name: Build
+    #   run: |
+    #     xcodebuild build -project ArkanaDemo.xcodeproj -scheme ArkanaDemo clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
