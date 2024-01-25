@@ -29,8 +29,6 @@ jobs:
     - name: Generate Arkana Packages
       run: |
         arkana -c .arkana.yml -e .env.keys -i debug -l swift
-        cd ArkanaKeys
           
-    # - name: Build
-    #   run: |
-    #     xcodebuild build -project ArkanaDemo.xcodeproj -scheme ArkanaDemo clean build -sdk iphoneos CODE_SIGNING_ALLOWED=No
+    - name: Build
+      run: swift build
